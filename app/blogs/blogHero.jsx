@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import NewsletterCTA from "./newsletter";
 import Blogheroanimate from "../components/Blogheroanimate";
