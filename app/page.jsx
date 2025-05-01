@@ -39,7 +39,7 @@ const Page = () => {
     <p className="text-gray-400 text-lg mb-8">
       MyBizAI helps you simplify operations, boost efficiency, and grow faster with smart tools tailored to your needs. Start your AI journey today — it’s easier than you think.
     </p>
-    <a href="/signup">
+    <a href="/">
       <button className="bg-white text-black font-semibold px-8 py-3 rounded-xl hover:bg-gray-200 transition-all duration-300">
         Get Started Now
       </button>

@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from "react";
-import { Loader2 } from "lucide-react";
+import { Loader2, Send, Sparkles, Bot, LineChart, MessageSquare } from "lucide-react";
 
 const industries = [
   "Retail", "E-commerce", "Healthcare", "Education", "Logistics", "Finance", "Hospitality"
@@ -21,7 +21,7 @@ export default function AiAnalyzerForm() {
   const chatHistory = [
     {
       role: 'ai',
-      content: "Hi there! I’ve analyzed your business site and here are some insights to help you scale efficiently.",
+      content: "Hi there! I've analyzed your business site and here are some insights to help you scale efficiently.",
     },
     {
       role: 'ai',
@@ -45,7 +45,7 @@ export default function AiAnalyzerForm() {
     },
     {
       role: 'ai',
-      content: "Here’s a quick link to our support bot demo: [View Demo](#). You’ll see how it handles common customer queries in real time.",
+      content: "Here's a quick link to our support bot demo: [View Demo](#). You'll see how it handles common customer queries in real time.",
     },
   ];
 
@@ -81,114 +81,171 @@ export default function AiAnalyzerForm() {
   };
 
   return (
-    <div className=" bg-black mx-auto p-6 lg:max-w-5xl rounded-2xl shadow-xl ">
-      <h2 className="text-3xl font-semibold text-white my-10 text-center">Analyze Your Business with AI Analyzer</h2>
-
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label className="text-gray-300 text-sm">Website URL (optional)</label>
-          <input
-            type="text"
-            placeholder="https://example.com"
-            className="w-full mt-1 px-4 py-2 bg-[#1a1a1a] text-white rounded-md "
-            value={form.website}
-            onChange={(e) => setForm({ ...form, website: e.target.value })}
-          />
+    <div className="relative min-h-screen bg-black">
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-purple-900/20 to-transparent pointer-events-none" />
+      
+      <div className="relative max-w-6xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Analyze Your Business with <span className="text-transparent bg-clip-text bg-linear-[149deg,#f0c4fc_5%,#c0c0ff_30%,#c0f8f2_100%]">AI Analyzer</span>
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">Get personalized insights and automation recommendations for your business using our advanced AI analysis tools.</p>
         </div>
 
-        <div>
-          <label className="text-gray-300 text-sm">Select Industry</label>
-          <select
-            className="w-full mt-1 px-4 py-2 bg-[#1a1a1a] text-white rounded-md "
-            value={form.industry}
-            onChange={(e) => setForm({ ...form, industry: e.target.value })}
-          >
-            <option value="">-- Choose Industry --</option>
-            {industries.map((ind) => (
-              <option key={ind} value={ind}>{ind}</option>
-            ))}
-          </select>
-        </div>
+        <div className="grid lg:grid-cols-1 gap-8">
+          {/* Form Section */}
+          <div className="bg-gray-900/50 backdrop-blur-sm p-6 rounded-2xl border border-gray-800">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label className="block text-gray-300 text-sm font-medium mb-2">Website URL <span className="text-gray-500">(optional)</span></label>
+                <div className="relative">
+                  <input
+                    type="text"
+                    placeholder="https://example.com"
+                    className="w-full px-4 py-2.5 bg-gray-800/50 text-white rounded-xl border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
+                    value={form.website}
+                    onChange={(e) => setForm({ ...form, website: e.target.value })}
+                  />
+                </div>
+              </div>
 
-        <div>
-          <label className="text-gray-300 text-sm mb-1 block">Operational Focus Areas</label>
-          <div className="grid grid-cols-2 gap-2">
-            {focusAreas.map((area) => (
-              <label key={area} className="flex items-center text-white gap-2 bg-[#1f1f1f] px-3 py-2 rounded-md cursor-pointer  hover:border-white transition">
-                <input
-                  type="checkbox"
-                  className="accent-purple-600"
-                  checked={form.focus.includes(area)}
-                  onChange={() => handleFocusChange(area)}
-                />
-                {area}
-              </label>
-            ))}
+              <div>
+                <label className="block text-gray-300 text-sm font-medium mb-2">Select Industry</label>
+                <select
+                  className="w-full px-4 py-2.5 bg-gray-800/50 text-white rounded-xl border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
+                  value={form.industry}
+                  onChange={(e) => setForm({ ...form, industry: e.target.value })}
+                >
+                  <option value="">-- Choose Industry --</option>
+                  {industries.map((ind) => (
+                    <option key={ind} value={ind}>{ind}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-gray-300 text-sm font-medium mb-3">Operational Focus Areas</label>
+                <div className="grid grid-cols-2 gap-3">
+                  {focusAreas.map((area) => (
+                    <label
+                      key={area}
+                      className={`flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all ${
+                        form.focus.includes(area)
+                          ? 'bg-purple-500/20 border-purple-500'
+                          : 'bg-gray-800/50 border-gray-700 hover:border-gray-600'
+                      } border`}
+                    >
+                      <input
+                        type="checkbox"
+                        className="hidden"
+                        checked={form.focus.includes(area)}
+                        onChange={() => handleFocusChange(area)}
+                      />
+                      <div className={`w-4 h-4 rounded border transition-all flex items-center justify-center ${
+                        form.focus.includes(area)
+                          ? 'bg-purple-500 border-purple-500'
+                          : 'border-gray-500'
+                      }`}>
+                        {form.focus.includes(area) && <Sparkles className="w-3 h-3 text-white" />}
+                      </div>
+                      <span className="text-sm text-white">{area}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full py-3 bg-linear-[149deg,#f0c4fc_5%,#c0c0ff_30%,#c0f8f2_100%] text-black font-semibold rounded-xl hover:opacity-90 transition-all"
+              >
+                {loading ? (
+                  <span className="flex justify-center items-center gap-2">
+                    <Loader2 className="animate-spin" size={20} /> Analyzing...
+                  </span>
+                ) : (
+                  <span className="flex justify-center items-center gap-2">
+                    <Bot size={20} /> Get My AI Report
+                  </span>
+                )}
+              </button>
+            </form>
+          </div>
+
+          {/* Results Section */}
+          <div className={`bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 transition-all ${
+            results ? 'opacity-100' : 'opacity-0'
+          }`}>
+            {results && (
+              <div className="h-full flex flex-col">
+                {/* Results Header */}
+                <div className="p-6 border-b border-gray-800">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center">
+                      <Bot className="w-5 h-5 text-purple-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-semibold">AI Analysis Results</h3>
+                      <p className="text-gray-400 text-sm">Based on your business profile</p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="bg-gray-800/50 p-4 rounded-xl">
+                      <p className="text-gray-300">{results.summary}</p>
+                      <p className="text-emerald-400 font-medium mt-2">{results.savings}</p>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      {results.improvements.map((point, idx) => (
+                        <div key={idx} className="flex items-start gap-3 text-gray-300">
+                          <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            {idx === 0 ? <MessageSquare className="w-3 h-3 text-purple-400" /> :
+                             idx === 1 ? <LineChart className="w-3 h-3 text-purple-400" /> :
+                             <Sparkles className="w-3 h-3 text-purple-400" />}
+                          </div>
+                          <p className="text-sm">{point}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Chat Section */}
+                <div className="flex-1 flex flex-col p-6">
+                  <div className="flex-1 overflow-y-auto space-y-4 mb-4">
+                    {chatHistory.map((msg, index) => (
+                      <div
+                        key={index}
+                        className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                      >
+                        <div className={`max-w-[80%] rounded-2xl px-4 py-2 ${
+                          msg.role === 'user'
+                            ? 'bg-purple-500 text-white'
+                            : 'bg-gray-800/50 text-gray-300'
+                        }`}>
+                          <p className="text-sm">{msg.content}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="relative">
+                    <input
+                      type="text"
+                      placeholder="Ask me anything about the analysis..."
+                      className="w-full px-4 py-3 bg-gray-800/50 text-white rounded-xl border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 pr-12"
+                    />
+                    <button className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-lg bg-purple-500 hover:bg-purple-600 transition-all">
+                      <Send className="w-4 h-4 text-white" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
-
-        <button
-          type="submit"
-          className="w-full mt-4 py-2 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition"
-        >
-          {loading ? (
-            <span className="flex justify-center items-center gap-2">
-              <Loader2 className="animate-spin" size={18} /> Analyzing...
-            </span>
-          ) : (
-            "Get My AI Report"
-          )}
-        </button>
-      </form>
-
-      {/* Output Section */}
-      {results && (
-  <div className="mt-6 bg-[#1a1a1a] text-white rounded-lg p-4 h-screen   shadow-lg">
-    <div className="mb-4">
-      <h3 className="text-lg font-bold mb-2">AI Assistant 🤖</h3>
-      <div className="space-y-3">
-        <div className="bg-[#262626] p-3 rounded-md">
-          <p className="text-sm text-purple-300 font-semibold">Here's what I found based on your business:</p>
-          <p className="text-sm mt-2">{results.summary}</p>
-          <p className="text-sm mt-2 text-green-400 font-semibold">{results.savings}</p>
-          <ul className="list-disc ml-5 mt-2 text-sm text-gray-300">
-            {results.improvements.map((point, idx) => (
-              <li key={idx}>{point}</li>
-            ))}
-          </ul>
-        </div>
       </div>
-    </div>
-
-    <div className="  p-3 rounded-md mt-4">
-      <div className="mb-3">
-        <p className="text-sm text-purple-400 font-semibold">Ask me anything about your business 🔍</p>
-        <div className="mt-4 space-y-3 overflow-y-scroll max-h-[300px] pr-2">
-  {chatHistory.map((msg, index) => (
-    <div
-      key={index}
-      className={`p-3 rounded-md max-w-[80%] ${
-        msg.role === 'user' ? 'bg-purple-800 text-white self-end ml-auto' : 'bg-[#262626] text-gray-300'
-      }`}
-    >
-      <p className="text-sm">{msg.content}</p>
-    </div>
-  ))}
-</div>
-
-        <input
-          type="text"
-          placeholder="Type your question..."
-          className="w-full mt-2 p-2 rounded-md bg-[#1e1e1e]  text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
-        />
-      </div>
-      <button className="bg-purple-600 hover:bg-purple-700 transition text-white py-1.5 px-4 rounded-md text-sm">
-        Ask AI
-      </button>
-    </div>
-  </div>
-)}
-
     </div>
   );
 }

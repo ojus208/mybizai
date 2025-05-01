@@ -1,11 +1,11 @@
 import React from "react";
 import NewsletterCTA from "./newsletter";
-
+import Blogheroanimate from "../components/Blogheroanimate";
 const categories = ["AI for SMBs", "Marketing Automation", "Tech Trends", "How-To Guides"];
 
 const HeroSection = () => {
   return (
-    <section className="w-full bg-gradient-to-b items-center from-black via-green-500 to-black py-16 lg:py-20 px-6 md:px-12 lg:px-24">
+    <section className="w-full bg-gradient-to-b  items-center from-black via-green-500 to-black py-16 lg:py-30 px-6 md:px-12 lg:px-24">
       <div className="w-full mx-auto flex flex-col lg:flex-row items-center justify-between gap-10">
         
         {/* Left Side - Text */}
@@ -16,7 +16,6 @@ const HeroSection = () => {
           <p className="mt-4 text-lg text-gray-300 max-w-xl">
             Learn how to grow faster, work smarter, and innovate with our latest AI insights, tools, and trends.
           </p>
-          <NewsletterCTA />
 
           {/* Search Bar
           <div className="mt-6 max-w-xl mx-auto lg:mx-0">
@@ -47,11 +46,12 @@ const HeroSection = () => {
 
         {/* Right Side - Image */}
         <div className="flex-1 hidden lg:flex justify-end">
-          <img
+          {/* <img
             src="https://illustrations.popsy.co/gray/robot-reading.svg"
             alt="AI for business illustration"
             className="w-full max-w-sm"
-          />
+          /> */}
+          <Blogheroanimate />
         </div>
       </div>
     </section>

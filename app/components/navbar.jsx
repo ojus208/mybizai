@@ -36,7 +36,7 @@ export default function Navbar() {
           </button>
         </div>
         
-        <div className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${menuOpen ? 'block bg-white shadow-md ' : 'hidden'}`}>
+        <div className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${menuOpen ? 'block bg-black shadow-md ' : 'hidden'}`}>
           <ul className="flex flex-col md:flex-row md:space-x-2 text-white  p-4 md:p-0 mt-4 md:mt-0 border border-gray-100 rounded-lg md:border-0">
             <li>
               <Link href="/" className="block py-2 px-3  hover:text-blue-600">Home</Link>
@@ -53,7 +53,7 @@ export default function Navbar() {
               </button>
             </li>
             <li><Link href="/about" className="block py-2 px-3  hover:text-blue-600">About Us</Link></li>
-            <li><Link href="/contact" className="block py-2 px-3  hover:text-blue-600">Contact</Link></li>
+            {/* <li><Link href="/contact" className="block py-2 px-3  hover:text-blue-600">Contact</Link></li> */}
             <li><Link href="/Products" className="block py-2 px-3  hover:text-blue-600">Products</Link></li>
           </ul>
         </div>

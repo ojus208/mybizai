@@ -1,6 +1,6 @@
 'use client'
 import React from "react";
-
+import Bizanalyzeranimate from "./Bizanalyzeranimate";
 const HeroAnalyzer = () => {
   const scrollToForm = () => {
     const formSection = document.getElementById("ai-form-section");
@@ -32,12 +32,13 @@ const HeroAnalyzer = () => {
         </div>
 
         {/* Optional Image/Visual */}
-        <div className="hidden md:block w-full max-w-md">
-          <img
+        <div className=" w-full max-w-xl">
+          {/* <img
             src="/images/ai-analyzer-hero.png" // Replace with your illustration path
             alt="AI Analyzing Illustration"
             className="w-full h-auto"
-          />
+          /> */}
+          <Bizanalyzeranimate />
         </div>
       </div>
     </section>

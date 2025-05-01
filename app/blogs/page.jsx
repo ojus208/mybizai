@@ -31,6 +31,8 @@ const Page = () => {
   return (
     <div className='bg-black text-white '>
         <HeroSection />
+        <NewsletterCTA />
+
         <SearchAndFilters />
         <BlogListSection
         blogs={dummyBlogs}

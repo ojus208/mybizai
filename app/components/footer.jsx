@@ -26,7 +26,7 @@ function Footer() {
 
                     <div className="flex mt-12 -mx-2">
                         <Link href="#"
-                            className="mx-2 text-gray-600 transition-colors duration-300 :text-gray-300 hover:text-blue-500 :hover:text-blue-400"
+                            className="mx-2 text-gray-400 transition-colors duration-300 :text-gray-300 hover:text-blue-500 :hover:text-blue-400"
                             aria-label="Reddit">
                             <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -36,7 +36,7 @@ function Footer() {
                         </Link>
                     
                         <Link href="#"
-                            className="mx-2 text-gray-600 transition-colors duration-300 :text-gray-300 hover:text-blue-500 :hover:text-blue-400"
+                            className="mx-2 text-gray-400 transition-colors duration-300 :text-gray-300 hover:text-blue-500 :hover:text-blue-400"
                             aria-label="Facebook">
                             <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -46,7 +46,7 @@ function Footer() {
                         </Link>
                     
                         <Link href="#"
-                            className="mx-2 text-gray-600 transition-colors duration-300 :text-gray-300 hover:text-blue-500 :hover:text-blue-400"
+                            className="mx-2 text-gray-400 transition-colors duration-300 :text-gray-300 hover:text-blue-500 :hover:text-blue-400"
                             aria-label="Github">
                             <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -61,30 +61,30 @@ function Footer() {
             <div className="mt-6 lg:mt-0 lg:flex-1">
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     <div>
-                        <h3 className="text-gray-700 uppercase :text-white">About</h3>
-                        <Link href="#" className="block mt-2 text-sm text-gray-600 :text-gray-400 hover:underline">Company</Link>
-                        <Link href="#" className="block mt-2 text-sm text-gray-600 :text-gray-400 hover:underline">Abous Us</Link>
-                        <Link href="#" className="block mt-2 text-sm text-gray-600 :text-gray-400 hover:underline">Careers</Link>
+                        <h3 className="text-gray-200 uppercase :text-white">About</h3>
+                        <Link href="#" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">Company</Link>
+                        <Link href="#" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">Abous Us</Link>
+                        <Link href="#" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">Careers</Link>
                     </div>
 
                     <div>
-                        <h3 className="text-gray-700 uppercase :text-white">Links</h3>
-                        <Link href="/privacypolicy" className="block mt-2 text-sm text-gray-600 :text-gray-400 hover:underline">Privacy Policy</Link>
-                        <Link href="/terms&conditions" className="block mt-2 text-sm text-gray-600 :text-gray-400 hover:underline">Terms & Conditions</Link>
-                        <Link href="/fraud" className="block mt-2 text-sm text-gray-600 :text-gray-400 hover:underline">Fraud Alert</Link>
+                        <h3 className="text-gray-200 uppercase :text-white">Links</h3>
+                        <Link href="/privacypolicy" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">Privacy Policy</Link>
+                        <Link href="/terms&conditions" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">Terms & Conditions</Link>
+                        <Link href="/fraud" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">Fraud Alert</Link>
                     </div>
 
                     <div>
-                        <h3 className="text-gray-700 uppercase :text-white">Products</h3>
-                        <Link href="#" className="block mt-2 text-sm text-gray-600 :text-gray-400 hover:underline">Mega cloud</Link>
-                        <Link href="#" className="block mt-2 text-sm text-gray-600 :text-gray-400 hover:underline">Aperion UI</Link>
-                        <Link href="#" className="block mt-2 text-sm text-gray-600 :text-gray-400 hover:underline">Meraki UI</Link>
+                        <h3 className="text-gray-200 uppercase :text-white">Products</h3>
+                        <Link href="#" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">Mega cloud</Link>
+                        <Link href="#" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">Aperion UI</Link>
+                        <Link href="#" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">Meraki UI</Link>
                     </div>
 
                     <div>
-                        <h3 className="text-gray-700 uppercase :text-white">Contact</h3>
-                        <span className="block mt-2 text-sm text-gray-600 :text-gray-400 hover:underline">+91 9165130008</span>
-                        <span className="block mt-2 text-sm text-gray-600 :text-gray-400 hover:underline">contact@mybizai.in</span>
+                        <h3 className="text-gray-200 uppercase :text-white">Contact</h3>
+                        <span className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">+91 9165130008</span>
+                        <span className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">contact@mybizai.in</span>
                     </div>
                 </div>
             </div>
@@ -93,7 +93,7 @@ function Footer() {
         <hr className="h-px my-6 bg-gray-200 border-none :bg-gray-700"/>
 
         <div>
-            <p className="text-center text-gray-500 :text-gray-400">© MyBizzAI 2025 - All rights reserved</p>
+            <p className="text-center text-gray-100 :text-gray-400">© MyBizzAI 2025 - All rights reserved</p>
         </div>
     </div>
 </footer>  )
