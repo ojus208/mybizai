@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const categories = [
   "AI for Business",
@@ -26,11 +27,16 @@ const SearchAndFilters = ({ onSearch, onCategoryChange }) => {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto mt-6">
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="w-full max-w-4xl mx-auto mt-6"
+    >
       {/* Search Bar */}
-      <div className="flex items-center border border-gray-300 rounded-md shadow-sm px-4 py-2 bg-white focus-within:ring-2 focus-within:ring-green-500">
+      <div className="relative">
         <svg
-          className="w-5 h-5 text-gray-400 mr-2"
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
@@ -45,29 +51,36 @@ const SearchAndFilters = ({ onSearch, onCategoryChange }) => {
         <input
           type="text"
           placeholder="Search articles, guides, case studies..."
-          className="w-full outline-none text-gray-700"
+          className="w-full bg-[#1a1a1a] border border-gray-700 text-gray-300 rounded-lg pl-12 pr-4 py-3 focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
           value={searchTerm}
           onChange={handleSearchChange}
         />
       </div>
 
       {/* Filters */}
-      <div className="mt-4 flex flex-wrap justify-center gap-2">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="mt-6 flex flex-wrap gap-3"
+      >
         {categories.map((cat, idx) => (
-          <button
+          <motion.button
             key={idx}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             onClick={() => handleCategoryClick(cat)}
-            className={`text-sm px-4 py-1.5 rounded-md border transition ${
+            className={`px-6 py-2 rounded-full bg-[#1a1a1a] border ${
               activeCategory === cat
-                ? "bg-green-600 text-white border-green-600"
-                : "border-green-100 bg-green-50 text-green-700 hover:bg-green-100"
-            }`}
+                ? 'border-green-500 text-green-400'
+                : 'border-gray-700 text-gray-300 hover:border-green-500 hover:text-green-400'
+            } transition-all`}
           >
             {cat}
-          </button>
+          </motion.button>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

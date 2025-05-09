@@ -62,13 +62,13 @@ function Footer() {
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     <div>
                         <h3 className="text-gray-200 uppercase :text-white">About</h3>
-                        <Link href="#" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">Company</Link>
-                        <Link href="#" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">Abous Us</Link>
-                        <Link href="#" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">Careers</Link>
+                        <Link href="/about" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">About Us</Link>
+                        <Link href="/about" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">Company</Link>
+                        <Link href="/about" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">Careers</Link>
                     </div>
 
                     <div>
-                        <h3 className="text-gray-200 uppercase :text-white">Links</h3>
+                        <h3 className="text-gray-200 uppercase :text-white">Legal</h3>
                         <Link href="/privacypolicy" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">Privacy Policy</Link>
                         <Link href="/terms&conditions" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">Terms & Conditions</Link>
                         <Link href="/fraud" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">Fraud Alert</Link>
@@ -76,15 +76,16 @@ function Footer() {
 
                     <div>
                         <h3 className="text-gray-200 uppercase :text-white">Products</h3>
-                        <Link href="#" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">Mega cloud</Link>
-                        <Link href="#" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">Aperion UI</Link>
-                        <Link href="#" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">Meraki UI</Link>
+                        <Link href="/aibusinessanalyzer" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">AI Business Analyzer</Link>
+                        <Link href="/Products" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">AI Tools</Link>
+                        <Link href="/Products" className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">Solutions</Link>
                     </div>
 
                     <div>
                         <h3 className="text-gray-200 uppercase :text-white">Contact</h3>
-                        <span className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">+91 9165130008</span>
-                        <span className="block mt-2 text-sm text-gray-400 :text-gray-400 hover:underline">contact@mybizai.in</span>
+                        <span className="block mt-2 text-sm text-gray-400 :text-gray-400">+91 9165130008</span>
+                        <span className="block mt-2 text-sm text-gray-400 :text-gray-400">contact@mybizai.in</span>
+                        <span className="block mt-2 text-sm text-gray-400 :text-gray-400">MyBizzAI Solutions LLP</span>
                     </div>
                 </div>
             </div>

@@ -7,31 +7,31 @@ const steps = [
   {
     id: 1,
     title: "Sign Up",
-    icon: <UserPlus className="h-4 w-4 sm:h-5 sm:w-5" />,
+    // icon: <UserPlus className="h-4 bg-slate-200 w-4 sm:h-14 sm:w-14 rounded-full" />,
     description: "Create your free MyBizAI account in seconds. No credit card needed.",
   },
   {
     id: 2,
     title: "Set Up Store",
-    icon: <Store className="h-4 w-4 sm:h-5 sm:w-5" />,
+    // icon: <Store className="h-4 w-4 bg-slate-200 sm:h-14 sm:w-14 rounded-full" />,
     description: "Easily add your products or services — no technical skills required.",
   },
   {
     id: 3,
     title: "Marketing Automation",
-    icon: <Megaphone className="h-4 w-4 sm:h-5 sm:w-5" />,
+    // icon: <Megaphone className="h-4 w-4 bg-slate-200 sm:h-14 sm:w-14 rounded-full" />,
     description: "Run campaigns across WhatsApp, Instagram, and more — on autopilot.",
   },
   {
     id: 4,
     title: "Customer Support",
-    icon: <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />,
+    // icon: <MessageCircle className="h-4 w-4 bg-slate-200 sm:h-14 sm:w-14 rounded-full" />,
     description: "AI answers your customer queries 24/7, saving time and effort.",
   },
   {
     id: 5,
     title: "Smart Insights",
-    icon: <LineChart className="h-4 w-4 sm:h-5 sm:w-5" />,
+    // icon: <LineChart className="h-4 w-4 bg-slate-200 sm:h-14 sm:w-14 rounded-full" />,
     description: "Track what's working and optimize with real-time AI-powered data.",
   },
 ];
