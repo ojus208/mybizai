@@ -1,7 +1,7 @@
 'use client'
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 
 const Page = () => {
     const [selectedIndustry, setSelectedIndustry] = useState('');
@@ -10,9 +10,11 @@ const Page = () => {
     const [selectedCategory, setSelectedCategory] = useState('all');
 
     const scrollToForm = () => {
-        const formSection = document.getElementById("ai-form-section");
-        if (formSection) {
-            formSection.scrollIntoView({ behavior: "smooth" });
+        if (typeof window !== 'undefined') {
+            const formSection = document.getElementById("ai-form-section");
+            if (formSection) {
+                formSection.scrollIntoView({ behavior: "smooth" });
+            }
         }
     };
 

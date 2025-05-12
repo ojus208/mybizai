@@ -1,16 +1,16 @@
 'use client'
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import Animation from "./Animation";
 
 const HeroAnalyzer = () => {
-  const scrollToForm = () => {
+  const scrollToForm = useCallback(() => {
     if (typeof window !== 'undefined') {
       const formSection = document.getElementById("ai-form-section");
       if (formSection) {
         formSection.scrollIntoView({ behavior: "smooth" });
       }
     }
-  };
+  }, []);
 
   // Add useEffect to ensure we're on the client side
   useEffect(() => {
