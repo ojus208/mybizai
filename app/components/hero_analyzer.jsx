@@ -1,13 +1,21 @@
 'use client'
-import React from "react";
+import React, { useEffect } from "react";
 import Animation from "./Animation";
+
 const HeroAnalyzer = () => {
   const scrollToForm = () => {
-    const formSection = document.getElementById("ai-form-section");
-    if (formSection) {
-      formSection.scrollIntoView({ behavior: "smooth" });
+    if (typeof window !== 'undefined') {
+      const formSection = document.getElementById("ai-form-section");
+      if (formSection) {
+        formSection.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
+
+  // Add useEffect to ensure we're on the client side
+  useEffect(() => {
+    // Any client-side initialization can go here
+  }, []);
 
   return (
     <section className="w-full bg-gradient-to-b from-black via-purple-500  to-black text-white py-20 px-6 md:px-12">
@@ -32,7 +40,7 @@ const HeroAnalyzer = () => {
         </div>
 
         {/* Optional Image/Visual */}
-        <div className=" w-full max-w-xl">
+        <div className="w-full max-w-xl">
           {/* <img
             src="/images/ai-analyzer-hero.png" // Replace with your illustration path
             alt="AI Analyzing Illustration"

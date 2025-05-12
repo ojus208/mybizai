@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import AiAnalyzerForm from '../components/businessAnalyzer'
 import AiInsightReport from '../components/aiinsighreport'
@@ -9,6 +10,8 @@ const Page = () => {
     <div className='bg-black'>
         <HeroAnalyzer />
         <AiAnalyzerForm />
+        <AiInsightReport />
+        <AIInsightChat />
     </div>
   )
 }
