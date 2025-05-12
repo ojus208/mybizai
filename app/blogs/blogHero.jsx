@@ -1,7 +1,7 @@
 'use client'
 import React from "react";
 import NewsletterCTA from "./newsletter";
-import Blogheroanimate from "../components/Blogheroanimate";
+import Animation from "../components/Animation";
 import { motion } from 'framer-motion'
 
 const HeroSection = () => {
@@ -107,7 +107,7 @@ const HeroSection = () => {
           className="flex-1 hidden lg:flex justify-end" 
           aria-hidden="true"
         >
-          <Blogheroanimate />
+          <Animation type="blog" className="w-full h-full" />
         </motion.div>
       </div>
     </motion.section>

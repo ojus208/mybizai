@@ -1,9 +1,7 @@
 "use client";
 import React from 'react'
 import { motion, useInView } from 'framer-motion'
-import Customersupanimate from './Customersupanimate'
-import Homeboostanimate from './Homeboostanimate'
-import Scalebizanimate from './Scalebizanimate'
+import Animation from "./Animation";
 
 const Transform_ai = () => {
     const ref = React.useRef(null)
@@ -118,7 +116,7 @@ const Transform_ai = () => {
                             variants={cardVariants}
                             className='w-full lg:w-1/2 flex justify-center'
                         >
-                            <Scalebizanimate />
+                            <Animation type="scalebiz" className="w-full h-full" />
                         </motion.div>
                     </motion.div>
 
@@ -131,7 +129,7 @@ const Transform_ai = () => {
                             variants={cardVariants}
                             className='w-full lg:w-1/2 flex justify-center'
                         >
-                            <Customersupanimate />
+                            <Animation type="customersupport" className="w-full h-full" />
                         </motion.div>
 
                         <motion.div 
@@ -245,7 +243,7 @@ const Transform_ai = () => {
                             variants={cardVariants}
                             className='w-full lg:w-1/2 flex justify-center'
                         >
-                            <Homeboostanimate />
+                            <Animation type="boostbiz" className="w-full h-full" />
                         </motion.div>
                     </motion.div>
                 </motion.section>

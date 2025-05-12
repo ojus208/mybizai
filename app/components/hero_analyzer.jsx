@@ -1,6 +1,6 @@
 'use client'
 import React from "react";
-import Bizanalyzeranimate from "./Bizanalyzeranimate";
+import Animation from "./Animation";
 const HeroAnalyzer = () => {
   const scrollToForm = () => {
     const formSection = document.getElementById("ai-form-section");
@@ -38,7 +38,7 @@ const HeroAnalyzer = () => {
             alt="AI Analyzing Illustration"
             className="w-full h-auto"
           /> */}
-          <Bizanalyzeranimate />
+          <Animation type="analyzer" className="w-full h-full" />
         </div>
       </div>
     </section>
