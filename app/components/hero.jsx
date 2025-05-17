@@ -75,12 +75,12 @@ const Hero = () => {
             variants={itemVariants}
             className="mb-4 text-xl font-bold tracking-tight md:text-5xl lg:text-5xl className:text-white sm:leading-15 text-white"
           >
-            Supercharge your business with AI—boost efficiency, cut costs, and scale smarter with 
+            Supercharge your business with AI—boost efficiency, cut costs, and scale smarter with  
             <motion.span 
               variants={itemVariants}
               className="bg-linear-[149deg,#f0c4fc_5%,#c0c0ff_60%,#c0f8f2_90%,teal] bg-clip-text text-transparent"
             >
-              MYBIZAI
+              <button></button>  MYBIZAI
             </motion.span>
           </motion.h1>
 

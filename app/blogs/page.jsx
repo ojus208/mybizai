@@ -96,7 +96,7 @@ const Page = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <main className='bg-black text-white'>
-        {/* <Breadcrumb items={breadcrumbItems} /> */}
+        <Breadcrumb items={breadcrumbItems} />
         <HeroSection />
         
         {/* Featured Blog Post */}

@@ -22,4 +22,8 @@ export const metadata = {
   alternates: {
     canonical: 'https://mybizai.com/blogs',
   },
+}
+
+export default function BlogLayout({ children }) {
+  return children
 } 
