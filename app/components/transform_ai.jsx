@@ -1,7 +1,17 @@
 "use client";
-import React from 'react'
+import React, { Suspense } from 'react'
 import { motion, useInView } from 'framer-motion'
-import Animation from "./Animation";
+import dynamic from 'next/dynamic'
+
+// Dynamically import Animation component
+const Animation = dynamic(() => import('./Animation'), {
+  loading: () => (
+    <div className="w-full h-full flex items-center justify-center">
+      <div className="animate-pulse bg-gray-200 rounded-lg w-full h-full"></div>
+    </div>
+  ),
+  ssr: false
+})
 
 const Transform_ai = () => {
     const ref = React.useRef(null)
@@ -81,26 +91,28 @@ const Transform_ai = () => {
                                     Transform and Scale Your Business with AI-Powered Automation and Smart Insights
                                 </h3>
                                 <ul className='text-gray-400 gap-4 flex flex-col text-sm md:text-base'>
-                                    <motion.li variants={itemVariants}>
-                                        <span className='sm:hidden'>Automate customer queries and inventory management</span>
-                                        <span className='hidden sm:inline'>Automate repetitive and time-consuming tasks such as responding to customer queries, managing orders, and updating inventory — freeing up your team for more strategic work.</span>
-                                    </motion.li>
-                                    <motion.li variants={itemVariants}>
-                                        <span className='sm:hidden'>24/7 AI-powered customer support</span>
-                                        <span className='hidden sm:inline'>Deliver instant, 24/7 support across platforms like WhatsApp, Instagram, and your website, ensuring customers are always attended to with fast, intelligent responses powered by AI.</span>
-                                    </motion.li>
-                                    <motion.li variants={itemVariants}>
-                                        <span className='sm:hidden'>Smart inventory management with AI</span>
-                                        <span className='hidden sm:inline'>Streamline your inventory management by tracking stock levels in real time, predicting demand, and reducing stockouts or overstocking with smart AI forecasts.</span>
-                                    </motion.li>
-                                    <motion.li variants={itemVariants}>
-                                        <span className='sm:hidden'>AI-powered marketing campaigns</span>
-                                        <span className='hidden sm:inline'>Create high-performing marketing campaigns effortlessly, with AI generating content, creatives, and targeting strategies based on your audience behavior and trends.</span>
-                                    </motion.li>
-                                    <motion.li variants={itemVariants}>
-                                        <span className='sm:hidden'>Real-time business insights</span>
-                                        <span className='hidden sm:inline'>Access real-time dashboards and AI-driven insights that help you make faster, more confident business decisions backed by data — not guesswork.</span>
-                                    </motion.li>
+                                    {[
+                                        {
+                                            title: "Automated Workflows",
+                                            mobile: "Streamline operations",
+                                            desktop: "Automate repetitive tasks and workflows to save time and reduce errors, letting your team focus on growth."
+                                        },
+                                        {
+                                            title: "Smart Analytics",
+                                            mobile: "Data-driven insights",
+                                            desktop: "Get real-time insights and predictions to make informed decisions and stay ahead of market trends."
+                                        },
+                                        {
+                                            title: "AI-Powered Marketing",
+                                            mobile: "Targeted campaigns",
+                                            desktop: "Create and optimize marketing campaigns with AI that understands your audience and maximizes ROI."
+                                        }
+                                    ].map((item, index) => (
+                                        <motion.li key={index} variants={itemVariants}>
+                                            <span className='sm:hidden'>{item.mobile}</span>
+                                            <span className='hidden sm:inline'>{item.desktop}</span>
+                                        </motion.li>
+                                    ))}
                                 </ul>
                                 <motion.button
                                     whileHover={{ scale: 1.05 }}
@@ -116,7 +128,13 @@ const Transform_ai = () => {
                             variants={cardVariants}
                             className='w-full lg:w-1/2 flex justify-center'
                         >
-                            <Animation type="scalebiz" className="w-full h-full" />
+                            <Suspense fallback={
+                                <div className="w-full h-full flex items-center justify-center">
+                                    <div className="animate-pulse bg-gray-200 rounded-lg w-full h-full"></div>
+                                </div>
+                            }>
+                                <Animation type="scalebiz" className="w-full h-full" />
+                            </Suspense>
                         </motion.div>
                     </motion.div>
 
@@ -129,29 +147,29 @@ const Transform_ai = () => {
                             variants={cardVariants}
                             className='w-full lg:w-1/2 flex justify-center'
                         >
-                            <Animation type="customersupport" className="w-full h-full" />
+                            <Suspense fallback={
+                                <div className="w-full h-full flex items-center justify-center">
+                                    <div className="animate-pulse bg-gray-200 rounded-lg w-full h-full"></div>
+                                </div>
+                            }>
+                                <Animation type="customersupport" className="w-full h-full" />
+                            </Suspense>
                         </motion.div>
 
                         <motion.div 
                             variants={cardVariants}
                             className='w-full lg:w-1/2 bg-linear-[149deg,#f0c4fc_5%,#c0c0ff_60%,#c0f8f2_90%,teal] p-0.5 sm:p-1 rounded-md transition-all duration-1000 ease-in-out'
                         >
-                            <div className='flex flex-col items-start justify-between bg-black w-full h-full rounded-lg p-3 sm:p-4 md:p-5 inset-4'>
-                                <h3 className='text-xl md:text-2xl lg:text-3xl font-bold text-white capitalize mb-3 sm:mb-4 md:mb-6'>
-                                    <span className='hidden sm:inline'>Deliver 24/7 Customer Support with AI – Built for Growing Businesses</span>
-                                    <span className='sm:hidden'>24/7 AI Customer Support</span>
+                            <div className='flex flex-col items-start justify-between bg-black w-full h-full rounded-lg p-4 md:p-5 inset-4'>
+                                <h3 className='text-xl md:text-3xl font-bold text-white capitalize mb-4'>
+                                    Enhance Customer Experience with AI-Powered Support
                                 </h3>
-                                <ul className='text-gray-400 space-y-3 sm:space-y-4 text-sm md:text-base w-full'>
+                                <ul className='text-gray-400 gap-4 flex flex-col text-sm md:text-base'>
                                     {[
                                         {
-                                            title: "Instant Responses",
-                                            mobile: "Automated FAQ handling",
-                                            desktop: "Handle FAQs like return policies, product availability, and delivery timelines without human intervention."
-                                        },
-                                        {
-                                            title: "Omnichannel Support",
-                                            mobile: "Unified chat system across platforms",
-                                            desktop: "Seamlessly manage customer interactions across WhatsApp, Instagram, website chat, and more from one unified system."
+                                            title: "Smart Responses",
+                                            mobile: "AI-powered chat support",
+                                            desktop: "Provide instant, accurate responses to customer queries 24/7 with our AI chatbot."
                                         },
                                         {
                                             title: "Personalized Interactions",
@@ -203,24 +221,19 @@ const Transform_ai = () => {
                                 <ul className='text-gray-400 gap-4 flex flex-col text-sm md:text-base'>
                                     {[
                                         {
-                                            mobile: "AI-powered customer behavior prediction",
-                                            desktop: "Predict Customer Behavior: Leverage machine learning models to forecast buying intent and tailor your messaging accordingly."
+                                            title: "Smart Campaigns",
+                                            mobile: "AI-driven marketing",
+                                            desktop: "Create and optimize marketing campaigns with AI that understands your audience and maximizes ROI."
                                         },
                                         {
-                                            mobile: "Quick AI marketing content creation",
-                                            desktop: "AI-Generated Campaigns: Let AI craft high-performing ad copies, email campaigns, and social media posts in minutes."
+                                            title: "Predictive Analytics",
+                                            mobile: "Future trend insights",
+                                            desktop: "Use AI to predict market trends and customer behavior, staying ahead of the competition."
                                         },
                                         {
-                                            mobile: "Automated lead prioritization",
-                                            desktop: "Smart Lead Scoring: Automatically prioritize leads based on their likelihood to convert, helping your team close deals faster."
-                                        },
-                                        {
-                                            mobile: "Smart product recommendations",
-                                            desktop: "Personalized Recommendations: Deliver product suggestions tailored to individual customer preferences using real-time data."
-                                        },
-                                        {
-                                            mobile: "AI-driven performance tracking",
-                                            desktop: "Performance Analytics: Get actionable insights into campaign performance with intelligent reporting and visualizations."
+                                            title: "Personalized Content",
+                                            mobile: "Tailored messaging",
+                                            desktop: "Deliver personalized content and offers to each customer based on their behavior and preferences."
                                         }
                                     ].map((item, index) => (
                                         <motion.li key={index} variants={itemVariants}>
@@ -243,7 +256,13 @@ const Transform_ai = () => {
                             variants={cardVariants}
                             className='w-full lg:w-1/2 flex justify-center'
                         >
-                            <Animation type="boostbiz" className="w-full h-full" />
+                            <Suspense fallback={
+                                <div className="w-full h-full flex items-center justify-center">
+                                    <div className="animate-pulse bg-gray-200 rounded-lg w-full h-full"></div>
+                                </div>
+                            }>
+                                <Animation type="boostbiz" className="w-full h-full" />
+                            </Suspense>
                         </motion.div>
                     </motion.div>
                 </motion.section>
